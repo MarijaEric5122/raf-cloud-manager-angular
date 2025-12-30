@@ -1,0 +1,8 @@
+<nav *ngIf="isLoggedIn$ | async" class="top-nav">
+  <a *ngIf="canReadUsers$ | async" routerLink="/users">Korisnici</a>
+  <a *ngIf="canSearchMachines$ | async" routerLink="/machines">Mašine</a>
+  <a *ngIf="canReadErrors$ | async" routerLink="/errors">Greške</a>
+  <button (click)="logout()">Logout</button>
+</nav>
+
+<router-outlet></router-outlet>
